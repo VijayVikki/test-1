@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+int main(){
+   int n,randno,chances=0;
+   srand(time(NULL));
+   randno=rand()%12;
+   while(chances<3){
+       printf("\nGuess a number:");
+       scanf("%d",&n);
+       if(randno==n){
+          printf("\nCongratulations! You guessed correct number.");
+          break;
+       }
+       else{
+          printf("\nSorry Try Again.");
+          chances++;
+       }
+       if(chances==3)
+          printf("\nBetter Luck Next Time.\nNumber is %d.",randno);
+   }     
+   return 0;
+}
